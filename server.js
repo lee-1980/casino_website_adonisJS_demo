@@ -18,6 +18,18 @@
 */
 
 const { Ignitor } = require('@adonisjs/ignitor')
+const cluster = require('cluster')
+const os = require("os")
+const numOfCpuCores = os.cpus().length
+
+if (cluster.isMaster) {
+  console.log(`Cluster master ${process.pid} is running.`)
+  for (let i=0; i < numOfCpuCores; i ++) {
+    cluster.fork()
+  }
+  require('@adonisjs/websocket/clusterPubSub')()
+  return
+}
 
 new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
