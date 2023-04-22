@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044){{url}} -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOtopia</title>
+    <link rel="icon" href="{{ assetsUrl('logo/favicon.ico')}}">
+    {{script('https://xumm.app/assets/cdn/xumm-oauth2-pkce.min.js')}}
+    {{style('css/bootstrap.min.css')}}
+    {{style('css/magnific-popup.css')}}
+    {{style('css/owl.carousel.min.css')}}
+    {{style('css/nice-select.css')}}
+    {{style('css/animate.css')}}
+    {{style('css/all.min.css')}}
+    {{style('css/main.css')}}
+    @!section('extra-css')
+</head>
+<body class="body-padding">
+
+    <!--Preloader Here-->
+    <div class="preloader">
+        <div class="thumb">
+            <img src="{{ assetsUrl('img/play.png')}}" alt="preloader">
+        </div>
+    </div>
+    <!--Preloader Here-->
+
+    <!--Header Here-->
+    <header class="header-section animated fadeInDown">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo-menu">
+                    <a href="/" class="logo">
+                        <img src="{{ assetsUrl('logo/logo.png')}}" alt="logo">
+                    </a>
+                </div>
+                <div class="header-bar d-lg-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="main-menu">
+                    <li class="text-base">
+                        <a href="{{url}}">Homes</a>
+                    </li>
+                    <li>
+                        <a href="{{url}}#about">About</a>
+                    </li>
+                    <li>
+                        <a href="{{url}}#game">Game</a>
+                    </li>
+                    <li>
+                        <a href="{{url}}#faq">FAQ</a>
+                    </li>
+
+                    <li>
+                        <a href="{{url}}#testi">Testimonial</a>
+                    </li>
+                    <li class="cmn-grp">
+                        <span class="cmn--btn wallet_xumm_connect">
+                            <span class="rela">Sign in with Xumm Wallet</span>
+                        </span>
+                        <span class="cmn--btn wallet_xumm_disconnect">
+                            <span class="rela">Disconnect</span> ||
+                            <span class="rela walletAddress"></span>
+                        </span>
+
+                    </li>
+                </ul>
+                <div class="mneu-btn-grp wallet_xumm_connect">
+                    <a href="#" class="cmn--btn">
+                        <span class="rela">Sign in with Xumm Wallet</span>
+                    </a>
+                </div>
+                <div class="mneu-btn-grp wallet_xumm_disconnect">
+                   <a href="#" class="cmn--btn">
+                    <span class="rela">Disconnect</span> ||
+                    <span class="rela walletAddress"></span>
+                   </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header End-->
+
+
+    @!section('content')
+
+    <!--Footer Start-->
+    <section class="footer__section pt-120">
+        <div class="container">
+            <div class="footer__top pb-120">
+               <div class="row g-5 justify-content-between">
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+                     <div class="widget__items">
+                        <div class="footer-head">
+                           <a href="{{url}}#0" class="footer-logo">
+                              <img src="{{ assetsUrl('logo/logo.png')}}" alt="f-logo">
+                           </a>
+                        </div>
+                        <div class="content-area">
+                           <p>
+                            OOtopia is a trusted online casino in UK that is authorised and licensed to operate.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+                     <div class="widget__items">
+                        <div class="footer-head">
+                           <h5 class="title">
+                             Company
+                           </h5>
+                        </div>
+                        <div class="content-area">
+                           <ul class="quick-link">
+                              <li>
+                                 <a href="{{url}}#0">
+                                    <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> Home
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="{{url}}#0">
+                                   <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> About
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="{{url}}#0">
+                                   <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> Games
+                                 </a>
+                              </li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+                    <div class="widget__items">
+                        <div class="footer-head">
+                           <h5 class="title">
+                            Support
+                           </h5>
+                        </div>
+                        <div class="content-area">
+                           <ul class="quick-link">
+                              <li>
+                                 <a href="{{url}}#0">
+                                    <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> FAQ
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="{{url}}#0">
+                                   <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> Contact Us
+                                 </a>
+                              </li>
+
+                              <li>
+                                 <a href="{{url}}#0">
+                                   <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> Testimonial
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                     <div class="widget__items">
+                        <div class="footer-head">
+                           <h5 class="title">
+                                Subscribe Our Newslatter
+                           </h5>
+                        </div>
+                        <div class="content-area">
+                           <form action="{{url}}#0">
+                              <input type="text" placeholder="Enter Your Email address">
+                              <button class="cmn--btn2" type="submit">
+                                 <span>Subscribe</span>
+                              </button>
+                           </form>
+                           <div class="social__area">
+                                <h6>
+                                    Follow Us
+                                </h6>
+
+                           <ul class="social">
+                            <li>
+                               <a href="{{url}}#" class="icon">
+                                  <i class="fa-brands fa-facebook-f"></i>
+                               </a>
+                            </li>
+                            <li>
+                               <a href="{{url}}#" class="icon">
+                                  <i class="fa-brands fa-instagram"></i>
+                               </a>
+                            </li>
+                            <li>
+                               <a href="{{url}}#" class="icon">
+                                  <i class="fa-brands fa-twitter"></i>
+                               </a>
+                            </li>
+                            <li>
+                               <a href="{{url}}#" class="icon">
+                                  <i class="fa-brands fa-whatsapp"></i>
+                               </a>
+                            </li>
+                         </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="text-white">
+                    Copyright © 2023, <a href="{{url}}#0">OOtopia</a> - All Right Reserved
+               </p>
+               <ul class="bottom__ling">
+                <li>
+                    <a href="{{url}}#0">
+                        Security
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url}}#0">
+                        Terms
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url}}#0">
+                        Privacy
+                    </a>
+                </li>
+               </ul>
+            </div>
+         </div>
+         <div class="shape__left">
+            <img src="{{ assetsUrl('img/footerleft.png')}}" alt="f-img">
+         </div>
+         <div class="shape__right">
+            <img src="{{ assetsUrl('img/footerleft.png')}}" alt="f-img">
+         </div>
+    </section>
+    <!--Footer End-->
+
+    <!--Register Modal Start-->
+    <div class="modal register__modal fade" id="register" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__left">
+                        <div class="modal__left__head">
+                            <h3>
+                                Welcome to <span></span> OOtopia
+                            </h3>
+                            <h6>
+                                up to 20% cashback
+                            </h6>
+                        </div>
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/tab-thumb.png')}}" alt="modal-img">
+                        </div>
+                    </div>
+                    <div class="modal__right">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Email</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" tabindex="-1">Phone</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Socials</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="#home-tab">
+                                <div class="form__tabs__wrap">
+                                    <form action="{{url}}#0">
+                                        <div class="form__grp">
+                                            <label for="email">Email</label>
+                                            <input type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="form__grp">
+                                            <label for="email">Password</label>
+                                            <input id="password-field4" type="password" placeholder="Password">
+                                            <span id="#password-field4" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                        <div class="form__grp">
+                                            <label for="email">Confirm</label>
+                                            <input id="password-field" type="password" placeholder="Confirm Password">
+                                            <span id="#password-field" class="fa fa-fw fa-eye field-icon toggle-password2"></span>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checki">
+                                            <label class="form-check-label" for="checki">
+                                                I am over 18 and I accept the <span>Privacy Policy and Terms and Conditions</span>
+                                            </label>
+                                        </div>
+                                        <a href="{{url}}#0" class="cmn--btn2">
+                                            <span>Register</span>
+                                        </a>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="#profile-tab">
+                                <div class="form__tabs__wrap">
+                                    <form action="{{url}}#0">
+                                        <div class="form__select">
+                                            <span class="form-country">Country</span>
+                                            <select style="display: none;">
+                                                <option value="1">Canada : +1</option>
+                                                <option value="2">Bahamas : +1 - 242</option>
+                                                <option value="3">Anguilla : +1 - 265</option>
+                                                <option value="4">Bermuda : +1 - 487</option>
+                                            </select><div class="nice-select" tabindex="0"><span class="current">Canada : +1</span><ul class="list"><li data-value="1" class="option selected">Canada : +1</li><li data-value="2" class="option">Bahamas : +1 - 242</li><li data-value="3" class="option">Anguilla : +1 - 265</li><li data-value="4" class="option">Bermuda : +1 - 487</li></ul></div>
+                                        </div>
+                                        <div class="form__grp form__grp__new">
+                                            <div class="fgroup">
+                                                <label for="email">Password</label>
+                                                <input id="password-field2" type="password" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form__select">
+                                            <span class="form-country">Dollar</span>
+                                            <select style="display: none;">
+                                                <option value="1">EUR</option>
+                                                <option value="2">PLN</option>
+                                                <option value="3">AUD</option>
+                                                <option value="4">USD</option>
+                                            </select><div class="nice-select" tabindex="0"><span class="current">EUR</span><ul class="list"><li data-value="1" class="option selected">EUR</li><li data-value="2" class="option">PLN</li><li data-value="3" class="option">AUD</li><li data-value="4" class="option">USD</li></ul></div>
+                                        </div>
+                                        <div class="form-check form__select_last">
+                                            <input class="form-check-input" type="checkbox" value="" id="checki2">
+                                            <label class="form-check-label" for="checki2">
+                                                I am over 18 and I accept the <span>Privacy Policy and Terms and Conditions</span>
+                                            </label>
+                                        </div>
+                                        <a href="{{url}}#0" class="cmn--btn2">
+                                            <span>Register</span>
+                                        </a>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="#contact-tab">
+                                <div class="form__tabs__wrap">
+                                    <ul class="social__icon">
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-facebook-f"></i></span>
+                                                <span>Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-twitter"></i></span>
+                                                <span>Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-linkedin"></i></span>
+                                                <span>Linkedin</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-instagram"></i></span>
+                                                <span>Instagram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-google"></i></span>
+                                                <span>Google</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-vimeo"></i></span>
+                                                <span>Vimeo</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-youtube"></i></span>
+                                                <span>Youtube</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-whatsapp"></i></span>
+                                                <span>Whatsapp</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <form action="{{url}}#0">
+                                        <div class="form-check form__select_last">
+                                            <input class="form-check-input" type="checkbox" value="" id="checki3">
+                                            <label class="form-check-label" for="checki3">
+                                                I am over 18 and I accept the <span>Privacy Policy and Terms and Conditions</span>
+                                            </label>
+                                        </div>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Register Modal End-->
+
+    <!--Login Modal Start-->
+    <div class="modal register__modal fade" id="login" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__left">
+                        <div class="modal__left__head">
+                            <h3>
+                                Welcome to <span></span> OOtopia
+                            </h3>
+                            <h6>
+                                up to 20% cashback
+                            </h6>
+                        </div>
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/tab-thumb.png')}}" alt="modal-img">
+                        </div>
+                    </div>
+                    <div class="modal__right">
+                        <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab1" data-bs-toggle="tab" data-bs-target="#home2" type="button" role="tab" aria-controls="home" aria-selected="true">Email</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab2" data-bs-toggle="tab" data-bs-target="#profile2" type="button" role="tab" aria-controls="profile" aria-selected="false" tabindex="-1">Phone</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab3" data-bs-toggle="tab" data-bs-target="#contact2" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Socials</button>
+                            </li>
+                        </ul>
+                            <div class="tab-content" id="myTabContent2">
+                            <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="#home-tab1">
+                                <div class="form__tabs__wrap">
+                                    <form action="{{url}}#0">
+                                        <div class="form__grp">
+                                            <label for="email">Email</label>
+                                            <input type="email" placeholder="Email Address">
+                                        </div>
+                                        <div class="form__grp">
+                                            <label for="email">Password</label>
+                                            <input id="password-field5" type="password" placeholder="Password">
+                                            <span id="#password-field5" class="fa fa-fw fa-eye field-icon toggle-password5"></span>
+                                        </div>
+                                        <a href="{{url}}#0" class="reset">
+                                            Reset password
+                                        </a>
+                                        <a href="{{url}}#0" class="cmn--btn2">
+                                            <span>Log in</span>
+                                        </a>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Register</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="#profile-tab2">
+                                <div class="form__tabs__wrap">
+                                    <form action="{{url}}#0">
+                                        <div class="form__select">
+                                            <span class="form-country">Country</span>
+                                            <select style="display: none;">
+                                                <option value="1">Canada : +1</option>
+                                                <option value="2">Bahamas : +1 - 242</option>
+                                                <option value="3">Anguilla : +1 - 265</option>
+                                                <option value="4">Bermuda : +1 - 487</option>
+                                            </select><div class="nice-select" tabindex="0"><span class="current">Canada : +1</span><ul class="list"><li data-value="1" class="option selected">Canada : +1</li><li data-value="2" class="option">Bahamas : +1 - 242</li><li data-value="3" class="option">Anguilla : +1 - 265</li><li data-value="4" class="option">Bermuda : +1 - 487</li></ul></div>
+                                        </div>
+                                        <div class="form__grp form__grp__new">
+                                            <div class="fgroup">
+                                                <label for="email">Password</label>
+                                                <input id="password-field22" type="password" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form__select">
+                                            <span class="form-country">Dollar</span>
+                                            <select style="display: none;">
+                                                <option value="1">EUR</option>
+                                                <option value="2">PLN</option>
+                                                <option value="3">AUD</option>
+                                                <option value="4">USD</option>
+                                            </select><div class="nice-select" tabindex="0"><span class="current">EUR</span><ul class="list"><li data-value="1" class="option selected">EUR</li><li data-value="2" class="option">PLN</li><li data-value="3" class="option">AUD</li><li data-value="4" class="option">USD</li></ul></div>
+                                        </div>
+                                        <div class="form-check form__select_last">
+                                            <input class="form-check-input" type="checkbox" value="" id="checki4">
+                                            <label class="form-check-label" for="checki4">
+                                                I am over 18 and I accept the <span>Privacy Policy and Terms and Conditions</span>
+                                            </label>
+                                        </div>
+                                        <a href="{{url}}#0" class="cmn--btn2">
+                                            <span>Register</span>
+                                        </a>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="#contact-tab3">
+                                <div class="form__tabs__wrap">
+                                    <ul class="social__icon">
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-facebook-f"></i></span>
+                                                <span>Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-twitter"></i></span>
+                                                <span>Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-linkedin"></i></span>
+                                                <span>Linkedin</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-instagram"></i></span>
+                                                <span>Instagram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-google"></i></span>
+                                                <span>Google</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-vimeo"></i></span>
+                                                <span>Vimeo</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-youtube"></i></span>
+                                                <span>Youtube</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url}}#0">
+                                                <span><i class="fa-brands fa-whatsapp"></i></span>
+                                                <span>Whatsapp</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <form action="{{url}}#0">
+                                        <div class="form-check form__select_last">
+                                            <input class="form-check-input" type="checkbox" id="checki5">
+                                            <label class="form-check-label" for="checki5">
+                                                I am over 18 and I accept the <span>Privacy Policy and Terms and Conditions</span>
+                                            </label>
+                                        </div>
+                                        <p>
+                                            Already have an account? <a href="{{url}}#">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Login Modal End-->
+
+    {{ script('js/jquery-3.6.0.min.js') }}
+    {{ script('js/bootstrap.bundle.min.js') }}
+    {{ script('js/jquery.magnific-popup.min.js') }}
+    {{ script('js/owl.carousel.min.js') }}
+    {{ script('js/jquery.nice-select.min.js') }}
+    {{ script('js/wow.min.js') }}
+    {{ script('js/main.js') }}
+    {{ script('js/wallet_connect.js') }}
+    @!section('scripts')
+</body>
+</html>

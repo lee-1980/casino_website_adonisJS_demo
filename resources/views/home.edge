@@ -1,0 +1,801 @@
+@layout('layout/main')
+
+@section('title')
+OOtopia
+@endsection
+
+@section('content')
+
+<!--Banner Here-->
+    <section class="banner__section">
+
+        <div>
+            <div class="row justify-content-between">
+                <div>
+                    <div class="banner__thumb wow fadeInDown" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                        <div class="bet__two">
+                            <img src="{{ assetsUrl('img/bet2.png')}}" alt="bet-img">
+                        </div>
+                        <img src="{{ assetsUrl('img/background1.jpeg')}}" alt="banner-img">
+                        <div class="bet__one">
+                            <img src="{{ assetsUrl('img/bet1.png')}}" alt="bet-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Banner End-->
+
+    <!--Feature Here-->
+    <section class="banner__feature wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+        <div class="container">
+            <div class="banner__feature__wrapper">
+                <div class="row g-4">
+                    <div class="col-xxl-4 col-lg-4 col-md-6">
+                        <div class="banner__feature__items">
+                            <div class="thumb">
+                                <img src="{{ assetsUrl('img/feature1.png')}}" alt="f-img">
+                            </div>
+                            <div class="content">
+                                <h5>
+                                    Sign Up First &amp; Login
+                                </h5>
+                                <p>
+                                    Description is needed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-lg-4 col-md-6">
+                        <div class="banner__feature__items">
+                            <div class="thumb">
+                                <img src="{{ assetsUrl('img/feature2.png')}}" alt="f-img">
+                            </div>
+                            <div class="content">
+                                <h5>
+                                    Complete Payment
+                                </h5>
+                                <p>
+                                    Description is needed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-lg-4 col-md-6">
+                        <div class="banner__feature__items">
+                            <div class="thumb">
+                                <img src="{{ assetsUrl('img/feature3.png')}}" alt="f-img">
+                            </div>
+                            <div class="content">
+                                <h5>
+                                    Choose Game &amp; Play
+                                </h5>
+                                <p>
+                                    Description is needed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Feature End-->
+
+    <!--About Here-->
+    <section class="about__section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-7">
+                    <div class="about__content wow fadeInRight" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
+                        <div class="section-header">
+                            <h2>
+                                About <span class="text-base">OOtopia</span> Casino
+                            </h2>
+                            <p class="ptext1">
+OOtopia is an online game that has taken the gaming world by storm. It is an open-world game that combines the best elements of traditional role-playing games and sandbox-style games.
+                            </p>
+                            <p class="ptext2">
+                                Players can explore a massive world filled with diverse and interesting characters and creatures, interact with them, and complete quests to gain experience and rewards.
+                            </p>
+                            <a href="{{url}}#0" class="cmn--btn2">
+                               <span> join us now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5">
+                    <div class="about__thumb wow fadeInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                        <img src="{{ assetsUrl('img/about.png')}}" alt="a-img">
+                        <div class="play">
+                            <a href="https://www.youtube.com/watch?v=FAajXAuUcVA" class="play-btn">
+                                <img src="{{ assetsUrl('img/play(1).png')}}" alt="a-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About End-->
+
+    <!--Games Start-->
+    <section class="game__section pt-120 pb-120" id="game">
+        <div class="container">
+            <div class="section-header max-width1 wow fadeInDown animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+                <h2>
+                    Top Awesome <span class="text-base">OOtopia</span> Games
+                </h2>
+                <p>
+                    Passive Income is a way to earn money without doing much work. OOtopia let you earn money while you sleep.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g1.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Flip-flOp Frenzy game</h4>
+                                <a href="{{url}}games/ootopia0001" class="cmn--btn2" >
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g2.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Dice Rolling</h4>
+                                <h6>$1,23,002</h6>
+                                <a href="{{url}}#0" class="cmn--btn2" disabled>
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g3.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Dice Rolling</h4>
+                                <h6>$1,23,002</h6>
+                                <a href="{{url}}#0" class="cmn--btn2" disabled>
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g4.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Dice Rolling</h4>
+                                <h6>$1,23,002</h6>
+                                <a href="{{url}}#0" class="cmn--btn2" disabled>
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g5.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Dice Rolling</h4>
+                                <h6>$1,23,002</h6>
+                                <a href="{{url}}#0" class="cmn--btn2" disabled>
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+                    <div class="game__items">
+                        <img src="{{ assetsUrl('img/g6.png')}}" alt="img">
+                        <div class="game__overlay">
+                            <div class="content">
+                                <h4>Dice Rolling</h4>
+                                <h6>$1,23,002</h6>
+                                <a href="{{url}}#0" class="cmn--btn2" disabled>
+                                    <span>Play Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Games End-->
+
+    <!--Faq Start-->
+    <section class="faq__section pb-120" id="faq">
+        <div class="container">
+            <div class="col-xl-4 col-lg-5 col-md-6">
+                <div class="section-header pb-60 wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                    <h2>
+                        <span class="text-base">FAQ</span>s
+                    </h2>
+                    <p>
+                        Vestibulum diam risus, convallis vel blandit eu, iaculis in diam. Fusce elementum metus sem.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-end justify-content-between">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="faq__board">
+                        <div class="accordion" id="accordionExample">
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                           <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                 <span>How can I verify my account?</span>
+                              </button>
+                           </h2>
+                           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                </p>
+                              </div>
+                           </div>
+                           </div>
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+                           <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span>How do I create OOtopia account?</span>
+                              </button>
+                           </h2>
+                           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                </p>
+                              </div>
+                           </div>
+                           </div>
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+                              <h2 class="accordion-header" id="headingThree">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span>The best online casino games are available at OOtopia?</span>
+                                 </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                 <div class="accordion-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="0.9s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+                              <h2 class="accordion-header" id="headingfour">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                    <span>What I need to start play?</span>
+                                 </button>
+                              </h2>
+                              <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
+                                 <div class="accordion-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="1.1s" style="visibility: hidden; animation-delay: 1.1s; animation-name: none;">
+                              <h2 class="accordion-header" id="headingfive">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                    <span>When I will Get Payment</span>
+                                 </button>
+                              </h2>
+                              <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
+                                 <div class="accordion-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item wow fadeInUp" data-wow-delay="1.2s" style="visibility: hidden; animation-delay: 1.2s; animation-name: none;">
+                              <h2 class="accordion-header" id="headingsix">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                    <span>Where can I Redeem My Earnings ?</span>
+                                 </button>
+                              </h2>
+                              <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix" data-bs-parent="#accordionExample">
+                                 <div class="accordion-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in nibh ut odio tempus malesuada ac bibendum diam. In sollicitudin, dui a rutrum semper, lectus dui ultrices nisl,
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                    <div class="faq__thumb">
+                        <img src="{{ assetsUrl('img/faq.png')}}" alt="faq-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Faq End-->
+
+
+
+    <!--Players Start-->
+    <section class="players__section pb-120" id="testi">
+        <div class="container">
+            <div class="section-header max-width1 wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                <h2>
+                    What <span class="text-base">OOtopia's</span> Players Say
+                </h2>
+                <p>
+                    OOtopia is the best. I can't stop playing this game. I love this game.
+                </p>
+            </div>
+            <div class="player__wrap owl-theme owl-carousel owl-loaded owl-drag">
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1316px, 0px, 0px); transition: all 0s ease 0s; width: 3949px;"><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man1.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Tiana Herwitz
+                            </h6>
+                            <span>Top Packer</span>
+                        </div>
+                    </div>
+                   <p>
+                      This is good
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man2.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Gretchen Carder
+                            </h6>
+                            <span>Top Casino</span>
+                        </div>
+                    </div>
+                   <p>
+                      OOtopia is the best.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man3.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Aspen Dokidis
+                            </h6>
+                            <span>Top Dice</span>
+                        </div>
+                    </div>
+                   <p>
+                      OOtopia is the best.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item active" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man1.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Tiana Herwitz
+                            </h6>
+                            <span>Top Packer</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item active" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man2.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Gretchen Carder
+                            </h6>
+                            <span>Top Casino</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item active" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man3.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Aspen Dokidis
+                            </h6>
+                            <span>Top Dice</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man1.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Tiana Herwitz
+                            </h6>
+                            <span>Top Packer</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man2.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Gretchen Carder
+                            </h6>
+                            <span>Top Casino</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div><div class="owl-item cloned" style="width: 418.667px; margin-right: 20px;"><div class="player__items">
+                    <div class="quation">
+                        <img src="{{ assetsUrl('img/quotation.png')}}" alt="q-img">
+                    </div>
+                    <div class="player__head">
+                        <div class="thumb">
+                            <img src="{{ assetsUrl('img/man3.png')}}" alt="player-img">
+                        </div>
+                        <div class="content">
+                            <h6>
+                                Aspen Dokidis
+                            </h6>
+                            <span>Top Dice</span>
+                        </div>
+                    </div>
+                   <p>
+                      I had the pleasure of trying out the Card Game Project OOtopia and was pleasantly surprised by the amount of fun I had. The game features a unique set of mechanics and strategies that are enjoyable to explore. The gameplay is fast and responsive, and the artwork is really well done and engaging. I highly recommend trying out the Card Game Project OOtopia!.
+                   </p>
+                   <div class="player__footer">
+                      <ul class="ratting">
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </li>
+                      </ul>
+                      <span class="time">
+                        2 hour ago
+                      </span>
+                   </div>
+                </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="fas fa-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fas fa-chevron-right"></i></button></div><div class="owl-dots disabled"></div></div>
+        </div>
+    </section>
+    <!--Players End-->
+
+    <!--Contact Start-->
+    <section class="contact__section pt-120 pb-120">
+        <div class="c__shpae">
+            <img src="{{ assetsUrl('img/c-shape.png')}}" alt="c-shape">
+        </div>
+        <div class="king__ludu">
+            <img src="{{ assetsUrl('img/king.png')}}" alt="king">
+        </div>
+        <div class="container">
+           <div class="row justify-content-between align-items-end">
+            <div class="col-xl-6 col-lg-6">
+                <div class="form__area__left">
+                    <div class="section-header pb-60 wow fadeInDown" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                        <h2>Get In Touch</h2>
+                        <p>
+                            We are here for you! How can we help?
+                        </p>
+                    </div>
+                   <form id="form">
+                      <div class="row">
+                          <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                              <div class="form-control form__items">
+                                  <input type="text" id="Name" placeholder="Enter your name">
+                                  <small>Error message</small>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+                              <div class="form-control form__items">
+                                  <input type="text" id="email" placeholder="Enter your email address">
+                                  <small>Error message</small>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+                              <div class="form-control form__items">
+                                  <textarea name="message" id="message" cols="10" rows="7" placeholder="Go ahead, we are listening..."></textarea>
+                                  <small>Error message</small>
+                              </div>
+                          </div>
+                      </div>
+                      <button type="submit" class="cmn--btn2"><span>Submit</span></button>
+                      <div class="thank_you">
+                         <p>Your Message is successfully sent !</p>
+                      </div>
+                  </form>
+                </div>
+             </div>
+              <div class="col-xl-4 col-lg-6">
+                 <div class="right__contact">
+                    <ul class="contact">
+                        <li class="wow fadeInDown" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
+                            <div class="phone-icon">
+                                 <img src="{{ assetsUrl('img/chat.png')}}" alt="img">
+                            </div>
+                            <div class="email-part">
+                                <h5>Whatsapp Chat</h5>
+                                <p>Money+1000000</p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInDown" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+                            <div class="phone-icon">
+                            <img src="{{ assetsUrl('img/email.png')}}" alt="img">
+                            </div>
+                            <div class="email-part">
+                                <h5>Email</h5>
+                                <p>fuck@gmail.com</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="l__shape">
+            <img src="{{ assetsUrl('img/l-shape.png')}}" alt="l-shape">
+        </div>
+        <div class="king__ludu2">
+            <img src="{{ assetsUrl('img/king.png')}}" alt="king">
+        </div>
+     </section>
+    <!--Contact End-->
+
+@endsection
+
