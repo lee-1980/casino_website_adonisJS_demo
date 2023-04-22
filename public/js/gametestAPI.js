@@ -152,20 +152,14 @@ $(document).ready(function () {
 
 function generateRandomNumber(currentNumber, expectation, options) {
 
-  options = parseInt(options)|| 3;
-
-  if(options !== 3 || options !== 4 ||  options !== 5){
-    options = 3;
-  }
-
   let ratioConfig = {
     3: 0.15,
-    4: 0.1,
+    4: 0.10,
     5: 0.06
   }
 
-  let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 1000);
-  let randomNumber = generateRandomNumberBetweenNAndM(1, 1000);
+  let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 10000);
+  let randomNumber = generateRandomNumberBetweenNAndM(1, 10000);
   // The player expects a smaller number than currentNumber
   if (expectation < 0) {
     // edge case
