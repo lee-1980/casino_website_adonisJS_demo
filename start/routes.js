@@ -14,11 +14,10 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+
 const Route = use('Route')
 
 Route.on('/').render('home')
 Route.get('games/:id', 'GameManagerController.gameRender')
-Route.post('games/placebet', 'GameManagerController.placebet')
-Route.post('games/winbet', 'GameManagerController.winbet').middleware(['betauth'])
 
 Route.get("*", ({ view }) => view.render("404"));

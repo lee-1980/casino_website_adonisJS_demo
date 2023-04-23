@@ -7,21 +7,21 @@
 
 <meta name="generator" content="Scirra Construct">
 
-	<link rel="manifest" href="appmanifest.json">
-	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
-	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
-	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
-	<link rel="icon" type="image/png" href="icons/icon-512.png">
-
+<link rel="manifest" href="appmanifest.json">
+<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+<link rel="icon" type="image/png" href="icons/icon-512.png">
 <link rel="stylesheet" href="style.css">
 
 <script src="https://xumm.app/assets/cdn/xumm-oauth2-pkce.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-
+{{ script('js/polyfill.min.js') }}
+{{ script('js/Ws.browser.js') }}
 </head>
 <body>
 {{ csrfField() }}
+
 <script>
 if (location.protocol.substr(0, 4) === "file")
 {
@@ -39,7 +39,7 @@ if (location.protocol.substr(0, 4) === "file")
 	<script src="scripts/offlineclient.js" type="module"></script>
 	<script src="scripts/main.js" type="module"></script>
 	<script src="scripts/register-sw.js" type="module"></script>
-
+  {{ script('js/gametestAPI.js') }}
 </body>
 </html>
 

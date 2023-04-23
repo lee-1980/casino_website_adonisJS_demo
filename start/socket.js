@@ -1,3 +1,5 @@
+'use strict'
+
 const Ws = use('Ws')
 
-Ws.channel('game:*', 'GameManagerController')
+Ws.channel('game:ootopia0001', 'FlipFlopFrezyActionController')

@@ -11,7 +11,7 @@ class ColUpdateProfitSchema extends Schema {
   }
 
   down () {
-    this.table('col_update_profits', (table) => {
+    this.table('records', (table) => {
       // reverse alternations
     })
   }

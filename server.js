@@ -24,7 +24,7 @@ const numOfCpuCores = os.cpus().length
 
 if (cluster.isMaster) {
   console.log(`Cluster master ${process.pid} is running.`)
-  for (let i=0; i < numOfCpuCores; i ++) {
+  for (let i=0; i < 1; i ++) {
     cluster.fork()
   }
   require('@adonisjs/websocket/clusterPubSub')()
@@ -32,6 +32,7 @@ if (cluster.isMaster) {
 }
 
 new Ignitor(require('@adonisjs/fold'))
+  .preLoad('start/redis')
   .appRoot(__dirname)
   .wsServer()
   .fireHttpServer()

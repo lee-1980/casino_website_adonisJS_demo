@@ -1,16 +1,7 @@
 'use strict'
-const Record = use('App/Models/Record')
-const xrpl = require("xrpl");
-const { v4: uuidV4 } = require('uuid')
-const jwt = require('jsonwebtoken')
-const {XummSdk} = require('xumm-sdk')
-const Env = use('Env')
-const Sdk = new XummSdk(Env.get('XUMM_APIKEY'), Env.get('XUMM_APISECRET'))
 
-const networkConfig = {
-  MAINNET: 'wss://s2.ripple.com',
-  TESTNET: 'wss://s.altnet.rippletest.net:51233',
-}
+
+
 const gameConfig = {
   ootopia0001 : "flipflopfrenzy",
 }
@@ -18,26 +9,28 @@ const gameConfig = {
 class GameManagerController {
 
   async gameRender({ params, view, response }) {
+
     if(gameConfig[params.id]){
       return view.render(`game/${gameConfig[params.id]}`)
     }
     else{
       return view.render('404')
     }
+
   }
 
   async placebet({ request, response }) {
 
     // Check the valid game request
-    let { game_id, payload_uuidv4, multiply } = request.all()
+    let { game_id, payload_uuidv4, option } = request.all()
     const game = gameConfig[game_id]
     if (game) {
       try{
-        multiply = parseFloat(multiply)
-
-        if(!payload_uuidv4 || !multiply || typeof multiply  !== 'number'){
+        if(!payload_uuidv4 || !option || typeof option  !== 'number'){
           throw new Error('Invalid parameters!')
         }
+
+        let multiply = parseFloat(cardConfig[option])
         const result = await Sdk.payload.get(payload_uuidv4)
 
         let record = null
@@ -109,7 +102,6 @@ class GameManagerController {
           if(oldRecord.profit > 0 || oldRecord.is_win){
             throw new Error('You have already won the bet!')
           }
-
           const result = await Sdk.payload.get(payload_uuidv4)
 
           if(result.response.dispatched_nodetype === Env.get('network')){

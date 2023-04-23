@@ -7,6 +7,7 @@ $(document).ready(function () {
    **/
   var auth = new XummPkce('47fc6b97-e9e1-4dc5-8ff6-f40202d5276c')
   var sdk = null
+  var myWallet = null
 
   function signedInHandler (authorized) {
     // Assign to global,
@@ -25,6 +26,7 @@ $(document).ready(function () {
     console.log('success')
     auth.state().then(state => {
       if (state.me) {
+        myWallet = state.me.account;
         console.log('success, me', JSON.stringify(state.me))
       }
     })
@@ -43,6 +45,36 @@ $(document).ready(function () {
       }
     })
   })
+
+  // Config the Adonis Websocket channel
+  const ws = adonis.Ws().connect();
+  let isConnected = false;
+  let subscription = null;
+  let token = null;
+
+  ws.on('open', () => {})
+
+  ws.on('close', () => {
+    subscription = null;
+  })
+
+  subscription = ws.subscribe('game:ootopia0001')
+
+  subscription.on('ready', () => {
+    isConnected = true;
+  })
+
+  subscription.on('error', (error) => {
+    alert('Error: there isn\'t a connection with the server.')
+    isConnected = false;
+  })
+
+  subscription.on('close', () => {
+    alert('Error: there isn\'t a connection with the server.')
+    isConnected = false;
+  })
+
+  // End of Config the Adonis Websocket channel
 
   /**
    * Fn to deal with a "Sign In" button click or redirect
@@ -97,7 +129,7 @@ $(document).ready(function () {
       })
   }
 
-  function placeBet(payload_uuidv4, multiply){
+  function placeBet(payload_uuidv4, option){
     return new Promise((resolve, reject) => {
       $.ajax({
         url: 'placebet',
@@ -106,7 +138,7 @@ $(document).ready(function () {
           game_id: 'ootopia0001',
           _csrf: $('input[name="_csrf"]').val(),
           payload_uuidv4: payload_uuidv4,
-          multiply: multiply,
+          multiply: option,
         },
         success : resolve,
         error:  reject
@@ -133,81 +165,119 @@ $(document).ready(function () {
     });
   }
 
-  async function placeBetInit(amount, multiply){
+  async function placeBetInit(amount, option){
+
     if(!sdk){
       await go();
     }
     let payload_uuidv4 = await go_payload(amount);
-    if(payload_uuidv4){
-      console.log('payloadId', payload_uuidv4)
-      let token = await placeBet(payload_uuidv4, multiply);
 
+    if(payload_uuidv4){
+      try{
+        if(isConnected){
+          subscription.emit('message',
+            {
+              event: 'ootopia0001:start',
+              payload_uuidv4: payload_uuidv4,
+              option: option ,
+              token: token
+            }
+          );
+        }
+        else{
+          throw new Error('There isn\'t a connection with the server.')
+        }
+      }
+      catch (e) {
+        alert('Error: ' + e.message)
+      }
     }
   }
 
-  let timer = setTimeout(function(){
-    winbet('35eeb85f-65cf-4a58-8cca-c8040d641f0c', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkX3V1aWR2NCI6IjM1ZWViODVmLTY1Y2YtNGE1OC04Y2NhLWM4MDQwZDY0MWYwYyIsImlhdCI6MTY4MjAyOTc3MSwiZXhwIjoxNjgyMDMzMzcxfQ.I8NaztNHjPjZEMgdZueOMcVa00nU78S87TuC5fkxv2w')
-  }, 5000);
+
+
+  async function eventhandler(message){
+    switch (message.event) {
+      case 'ootopia0001:init':
+        console.log('ootopia0001:init', message);
+        token = message.token;
+        break;
+      case 'ootopia0001:quiz':
+        console.log('ootopia0001:quiz', message);
+        token = message.token;
+        // message value example:
+        // {
+        //   "event": "ootopia0001:quiz",
+        //   "step": 1,             step is 1, means this is first flipping, step is 2 which means this is the second flipping
+        //   "leftCard": 21,      this is the next challenge Left Card
+        //   "rightCard": 21,     This is the previous Right Card you answered correctly, this is optional. if it is not present, it means the this is the first card flipping.
+        //   "token": "xxxxx",      this is the token to be used in the next step
+        //   "rightCount": 0        Count the number of right answer
+        // }
+        let leftcard = message.leftcard;
+        // write your function to use this leftcard
+        break;
+      case 'ootopia0001:win':
+        // message value example:
+        // {
+        //   "event": "ootopia0001:win",
+        //   "message": "The last card is 21. Congratulation! You won the bet! Reward 10 XRP is sent to your wallet ",
+        //   "rightCard": 21,          this is the last right card
+        //   "leftCard": 21,           this is the last left card you challenged
+        // }
+        alert('Notification: ' + message.message + myWallet + '!');
+        break;
+      case 'ootopia0001:lose':
+        // message value example:
+        // {
+        //   "event": "ootopia0001:lose",
+        //   "message": "The last right card is 21. You lost the bet!",
+        //   "rightCard": 21,          this is the generated right card
+        //   "leftCard": 21,           this is the last left card you challenged
+        // }
+        alert('Notificaiton: ' + message.message)
+        break;
+      case 'ootopia0001:error':
+        alert('Error: ' + message.message)
+        // Display Error message and Restart button to restart the game
+        break;
+    }
+  }
+
+  async function sendToServer(answer){
+    // Answer is one of "high", "low" or "equal"
+    if (!isConnected) alert('Error: there isn\'t a connection with the server.')
+    // placeBetInit(2,4)
+    subscription.emit('message',
+      {
+        event: 'ootopia0001:check',
+        answer: answer,
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkX3V1aWR2NCI6ImIyNTEwZDlmLWU0MTEtNDdlMC04MjY0LWZkYWMwNTVmNTI2YyIsInN0ZXAiOjQsImxlZnRDYXJkIjo4LCJvcHRpb24iOjQsImlhdCI6MTY4MjI4MDkxNiwiZXhwIjoxNjgyMjg0NTE2fQ.YOee-NCvZ_nc1z1BTQB_47G7mKvJNwyPdkW138dHFTo"
+      }
+    );
+  }
+
+  // {
+  //   "event": "ootopia0001:quiz",
+  //   "leftCard": 8,
+  //   "rightCard": 26,
+  //   "step": 4,
+  //   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkX3V1aWR2NCI6ImIyNTEwZDlmLWU0MTEtNDdlMC04MjY0LWZkYWMwNTVmNTI2YyIsInN0ZXAiOjQsImxlZnRDYXJkIjo4LCJvcHRpb24iOjQsImlhdCI6MTY4MjI4MDkxNiwiZXhwIjoxNjgyMjg0NTE2fQ.YOee-NCvZ_nc1z1BTQB_47G7mKvJNwyPdkW138dHFTo",
+  //   "rightCount": 3
+  // }
+
+  subscription.on('message', eventhandler)
+
+  setTimeout(()=>{
+    sendToServer("high")
+  }, 5000)
+
+
 });
 
-function generateRandomNumber(currentNumber, expectation, options) {
 
-  let ratioConfig = {
-    3: 0.15,
-    4: 0.10,
-    5: 0.06
-  }
 
-  let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 10000);
-  let randomNumber = generateRandomNumberBetweenNAndM(1, 10000);
-  // The player expects a smaller number than currentNumber
-  if (expectation < 0) {
-    // edge case
-    if (currentNumber == 1)
-      return generateRandomNumberBetweenNAndM(1, 50);
-    // if randomNumber < threshold, do as the player expects, i.e., return a smaller number
-    if (randomNumber < threshold) {
-      return generateRandomNumberBetweenNAndM(1, currentNumber - 1);
-      // otherwise, do the opposite
-    } else {
-      return generateRandomNumberBetweenNAndM(currentNumber, 50);
-    }
-    // The player expects an equal number as currentNumber
-  } else if (expectation == 0) {
-    // if randomNumber < threshold, do as the player expects, i.e., return an equal number
-    if (randomNumber < threshold) {
-      return currentNumber;
-      // otherwise, do the opposite
-    } else {
-      let randomNumber = 0;
-      do {
-        randomNumber = generateRandomNumberBetweenNAndM(1, 50);
-      } while (randomNumber == currentNumber);
-      return randomNumber;
-    }
-    // The player expects a larger number than currentNumber
-  } else if (expectation > 0) {
-    // edge case
-    if (currentNumber == 50)
-      return generateRandomNumberBetweenNAndM(1, 50);
-    // if randomNumber < threshold, do as the player expects, i.e., return a larger number
-    if (randomNumber < threshold) {
-      return generateRandomNumberBetweenNAndM(currentNumber + 1, 50);
-      // otherwise, do the opposite
-    } else {
-      return generateRandomNumberBetweenNAndM(1, currentNumber);
-    }
-  }
-}
 
-// create a function that generates a random number between n and m
-function generateRandomNumberBetweenNAndM(n, m) {
-  if (n == m)
-    return n;
-  else if (n > m)
-    return generateRandomNumberBetweenNAndM(m, n)
-  return Math.floor(Math.random() * (m - n + 1)) + n;
-}
 
 
 // test 1
@@ -239,3 +309,5 @@ function test1() {
   }
   console.log(correct / tests);
 }
+
+
