@@ -24,7 +24,7 @@ const numOfCpuCores = os.cpus().length
 
 if (cluster.isMaster) {
   console.log(`Cluster master ${process.pid} is running.`)
-  for (let i=0; i < 1; i ++) {
+  for (let i=0; i < numOfCpuCores; i ++) {
     cluster.fork()
   }
   require('@adonisjs/websocket/clusterPubSub')()
