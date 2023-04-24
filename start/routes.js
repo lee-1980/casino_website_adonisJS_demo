@@ -18,6 +18,7 @@
 const Route = use('Route')
 
 Route.on('/').render('home')
+Route.on('terms').render('terms')
 Route.get('games/:id', 'GameManagerController.gameRender')
 
 Route.get("*", ({ view }) => view.render("404"));

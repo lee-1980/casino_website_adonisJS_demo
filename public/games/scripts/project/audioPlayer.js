@@ -23,6 +23,7 @@ export async function init( runtime)
 			src: [audioUrl],
 			html5: true
 		});
+
 		audiosMap.set(_name,sound);
 	};
 };

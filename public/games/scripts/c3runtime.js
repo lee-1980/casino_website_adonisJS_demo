@@ -4412,7 +4412,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.ScriptsInEvents.EventSheet1_Event21_Act1,
 		C3.ScriptsInEvents.EventSheet1_Event23_Act1,
 		C3.ScriptsInEvents.EventSheet1_Event24_Act1,
-		C3.ScriptsInEvents.EventSheet1_Event26_Act1
+		C3.ScriptsInEvents.EventSheet1_Event26_Act1,
+		C3.Plugins.Touch.Cnds.IsInTouch,
+		C3.ScriptsInEvents.EventSheet1_Event29_Act1
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4640,7 +4642,8 @@ self.C3_ExpressionFuncs = [
 		() => "LosePopup",
 		() => "WinPopup",
 		() => "MessageBox",
-		() => "Loading"
+		() => "Loading",
+		() => "FirstTouchDetector"
 ];
 
 

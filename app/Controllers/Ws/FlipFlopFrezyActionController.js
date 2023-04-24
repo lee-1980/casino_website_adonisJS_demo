@@ -29,8 +29,8 @@ const generateRandomNumber = (currentNumber, expectation, options) => {
     5: 0.06
   }
 
-  let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 10000);
-  let randomNumber = generateRandomNumberBetweenNAndM(1, 10000);
+  let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 100);
+  let randomNumber = generateRandomNumberBetweenNAndM(1, 100);
   console.log(threshold)
   console.log(randomNumber)
   console.log(currentNumber)

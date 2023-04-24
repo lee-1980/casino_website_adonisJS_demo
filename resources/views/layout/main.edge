@@ -42,22 +42,40 @@
                     <span></span>
                 </div>
                 <ul class="main-menu">
+                    @if(url == '/terms')
+                    <li >
+                       <a href="/">Homes</a>
+                    </li>
+                    <li>
+                       <a href="/#about">About</a>
+                    </li>
+                    <li>
+                       <a href="/#game">Game</a>
+                    </li>
+                    <li>
+                       <a href="/#testi">Testimonial</a>
+                    </li>
                     <li class="text-base">
-                        <a href="{{url}}">Homes</a>
+                       <a href="terms">Terms of Service</a>
+                    </li>
+                    @else
+                    <li class="text-base">
+                        <a href="/">Homes</a>
                     </li>
                     <li>
-                        <a href="{{url}}#about">About</a>
+                        <a href="/#about">About</a>
                     </li>
                     <li>
-                        <a href="{{url}}#game">Game</a>
+                        <a href="/#game">Game</a>
                     </li>
                     <li>
-                        <a href="{{url}}#faq">FAQ</a>
+                        <a href="/#testi">Testimonial</a>
                     </li>
+                    <li>
+                        <a href="terms">Terms of Service</a>
+                    </li>
+                    @endif
 
-                    <li>
-                        <a href="{{url}}#testi">Testimonial</a>
-                    </li>
                     <li class="cmn-grp">
                         <span class="cmn--btn wallet_xumm_connect">
                             <span class="rela">Sign in with Xumm Wallet</span>
@@ -93,17 +111,21 @@
         <div class="container">
             <div class="footer__top pb-120">
                <div class="row g-5 justify-content-between">
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s" style="margin-top: -10px; visibility: hidden; animation-delay: 0.9s; animation-name: none;">
                      <div class="widget__items">
                         <div class="footer-head">
                            <a href="{{url}}#0" class="footer-logo">
-                              <img src="{{ assetsUrl('logo/logo.png')}}" alt="f-logo">
+                              <img src="{{ assetsUrl('logo/logo.png')}}" alt="f-logo" style="border-radius: 5px; border: 1px solid #e4d501;">
                            </a>
                         </div>
-                        <div class="content-area">
-                           <p>
-                            OOtopia is a trusted online casino in UK that is authorised and licensed to operate.
-                           </p>
+                        <div class="content-area" style=" font-size: 14px; color: white" ;>
+                           <span>
+                            Club OOtopia Ltd is a registered and trusted online crypto casino company that is licensed and operating from Costa Rica.
+                            </span>
+                            <br>
+                            <span>
+                            Follow your own jurisdiction laws. Over 18s only.
+                           </span>
                         </div>
                      </div>
                   </div>
@@ -145,11 +167,7 @@
                         </div>
                         <div class="content-area">
                            <ul class="quick-link">
-                              <li>
-                                 <a href="{{url}}#0">
-                                    <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> FAQ
-                                 </a>
-                              </li>
+
                               <li>
                                  <a href="{{url}}#0">
                                    <img src="{{ assetsUrl('img/rightarrow.png')}}" alt="angle"> Contact Us
@@ -165,44 +183,29 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                  <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
                      <div class="widget__items">
                         <div class="footer-head">
                            <h5 class="title">
-                                Subscribe Our Newslatter
+                                Follow Us
                            </h5>
                         </div>
                         <div class="content-area">
-                           <form action="{{url}}#0">
-                              <input type="text" placeholder="Enter Your Email address">
-                              <button class="cmn--btn2" type="submit">
-                                 <span>Subscribe</span>
-                              </button>
-                           </form>
                            <div class="social__area">
                                 <h6>
-                                    Follow Us
+
                                 </h6>
 
                            <ul class="social">
                             <li>
-                               <a href="{{url}}#" class="icon">
-                                  <i class="fa-brands fa-facebook-f"></i>
+                               <a href="https://discord.gg/7VhXFQv3Tj" class="icon" target="_blank">
+                                  <i class="fa-brands fa-discord"></i>
                                </a>
                             </li>
+
                             <li>
-                               <a href="{{url}}#" class="icon">
-                                  <i class="fa-brands fa-instagram"></i>
-                               </a>
-                            </li>
-                            <li>
-                               <a href="{{url}}#" class="icon">
+                               <a href="https://twitter.com/ClubOOtopia?t=fXVcaAF5tGoM1o2uHDIYlg&s=09" class="icon" target="_blank">
                                   <i class="fa-brands fa-twitter"></i>
-                               </a>
-                            </li>
-                            <li>
-                               <a href="{{url}}#" class="icon">
-                                  <i class="fa-brands fa-whatsapp"></i>
                                </a>
                             </li>
                          </ul>
@@ -212,27 +215,11 @@
                   </div>
                </div>
             </div>
-            <div class="footer__bottom">
+
+            <div class="footer__bottom" style="text-align: center;">
                <p class="text-white">
                     Copyright © 2023, <a href="{{url}}#0">OOtopia</a> - All Right Reserved
                </p>
-               <ul class="bottom__ling">
-                <li>
-                    <a href="{{url}}#0">
-                        Security
-                    </a>
-                </li>
-                <li>
-                    <a href="{{url}}#0">
-                        Terms
-                    </a>
-                </li>
-                <li>
-                    <a href="{{url}}#0">
-                        Privacy
-                    </a>
-                </li>
-               </ul>
             </div>
          </div>
          <div class="shape__left">

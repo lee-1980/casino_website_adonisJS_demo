@@ -83,6 +83,11 @@ const scriptsInEvents = {
 	async EventSheet1_Event26_Act1(runtime, localVars)
 	{
 		Main.onMessageBoxOkBtnClick();
+	},
+
+	async EventSheet1_Event29_Act1(runtime, localVars)
+	{
+		Main.OnAnyTouch();
 	}
 
 };

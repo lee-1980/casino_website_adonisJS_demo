@@ -1,0 +1,19 @@
+ul {
+  display: block;
+  list-style-type: disc !important;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+
+ol, ul {
+  padding-left: 2rem !important;
+}
+
+dl, ol, ul {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}

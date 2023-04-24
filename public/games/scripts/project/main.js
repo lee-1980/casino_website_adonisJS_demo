@@ -59,13 +59,15 @@ let startmenu_multiplier = null;
 
 let multipiersValues = new Map();
 
+let isFirstTouchPresed = false;
+
 runOnStartup(async runtime =>
 {
 	events.attach(globalThis);
 	
 	SetGameContainerDiv();
 	
-	cards.init(runtime);
+	
 	helper.init(runtime);
 	AudioPlayer.init(runtime);
 	jasen.init();
@@ -150,10 +152,13 @@ runOnStartup(async runtime =>
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	runtime.addEventListener("afterprojectstart", () => OnAfterProjectStart(runtime));
 	
+	console.log(runtime);
+	
 	_runtime = runtime;
 		
 	 globalThis._runtime = runtime;
 });
+
 
 
 function SetGameContainerDiv(){
@@ -173,21 +178,14 @@ async function OnAfterProjectStart(runtime){
 
 	AudioPlayer.setSfxMute(false);
 	
-	//console.log(eventGroupManager.getFirstActiveEventGroup())
+  var context = new AudioContext();
+  console.log("AudioContext.state: ",context.state);
 }
 async function OnBeforeProjectStart(runtime)
 {	
 	//runtime.addEventListener("tick", () => Tick(runtime));
 	//runtime.addEventListener("resize", (e) => Resize(e));
 
-	winPopup = runtime.layout.getLayer("WinPopup");
-	losePopup = runtime.layout.getLayer("LosePopup");
-	gamePlayLayer = runtime.layout.getLayer("GamePlay");
-	settingPopup =  runtime.layout.getLayer("Setting");
-	
-	winPopup.isVisible = false;
-	losePopup.isVisible = false;
-	settingPopup.isVisible = false;
 }
 
 
@@ -229,8 +227,18 @@ async function init(runtime){
 	multipiersValues.set(5,"3x");
 
 
+	winPopup = runtime.layout.getLayer("WinPopup");
+	losePopup = runtime.layout.getLayer("LosePopup");
+	gamePlayLayer = runtime.layout.getLayer("GamePlay");
+	settingPopup =  runtime.layout.getLayer("Setting");
+	
+	winPopup.isVisible = false;
+	losePopup.isVisible = false;
+	settingPopup.isVisible = false;
+	
 	messageBox.init(runtime);
 	loadingBox.init(runtime);
+	cards.init(runtime);
 
 	startmenu_indicator = _runtime.objects.startmenu_indicator.getFirstInstance();
 	startmenu_multiplier = _runtime.objects.startmenu_multiplier.getFirstInstance();
@@ -268,8 +276,6 @@ async function init(runtime){
 		onRightWrongTextFlashEnd();
 	});
 	
-	AudioPlayer.PlayMusic();
-
 	eventGroupManager.init(eventGroupNames,["MessageBox","Loading"]);
 	
 	// ["StartMenu","WinPopup","LosePopup","GamePlay","MessageBox","Loading"];
@@ -534,4 +540,12 @@ export function OnInitBetInputChange()
 
 export function onMessageBoxOkBtnClick(){
 	messageBox.show(false);
+}
+export function OnAnyTouch(){
+	if(!isFirstTouchPresed){
+		isFirstTouchPresed = true;
+		//AudioPlayer.PlaySFX("silence");
+	    AudioPlayer.PlayMusic();
+		
+	}
 }

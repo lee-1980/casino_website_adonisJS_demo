@@ -690,7 +690,7 @@ p {
 .footer__bottom {
   border-top: 1px solid rgb(130, 45, 112);
   padding: 29px 0;
-  display: flex;
+  text-align: center;
   justify-content: space-between;
   position: relative;
   z-index: 1;
