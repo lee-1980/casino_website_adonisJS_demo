@@ -74,6 +74,8 @@ $(document).ready(function () {
     isConnected = false;
   })
 
+  subscription.on('message', eventhandler)
+
   // End of Config the Adonis Websocket channel
 
   /**
@@ -127,42 +129,6 @@ $(document).ready(function () {
       .catch(function (e) {
         alert('Paylaod error', e.message)
       })
-  }
-
-  function placeBet(payload_uuidv4, option){
-    return new Promise((resolve, reject) => {
-      $.ajax({
-        url: 'placebet',
-        type: 'POST',
-        data: {
-          game_id: 'ootopia0001',
-          _csrf: $('input[name="_csrf"]').val(),
-          payload_uuidv4: payload_uuidv4,
-          multiply: option,
-        },
-        success : resolve,
-        error:  reject
-      });
-    })
-  }
-
-  function winbet(payload_uuidv4, token){
-    $.ajax({
-      url: 'winbet',
-      type: 'POST',
-      data: {
-        game_id: 'ootopia0001',
-        _csrf: $('input[name="_csrf"]').val(),
-        payload_uuidv4: payload_uuidv4,
-        token: token,
-      },
-      success: function (data) {
-        console.log(data);
-      },
-      error: function (error) {
-        console.log(error);
-      }
-    });
   }
 
   async function placeBetInit(amount, option){
@@ -252,26 +218,15 @@ $(document).ready(function () {
       {
         event: 'ootopia0001:check',
         answer: answer,
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkX3V1aWR2NCI6ImIyNTEwZDlmLWU0MTEtNDdlMC04MjY0LWZkYWMwNTVmNTI2YyIsInN0ZXAiOjQsImxlZnRDYXJkIjo4LCJvcHRpb24iOjQsImlhdCI6MTY4MjI4MDkxNiwiZXhwIjoxNjgyMjg0NTE2fQ.YOee-NCvZ_nc1z1BTQB_47G7mKvJNwyPdkW138dHFTo"
+        token: token
       }
     );
+
   }
 
-  // {
-  //   "event": "ootopia0001:quiz",
-  //   "leftCard": 8,
-  //   "rightCard": 26,
-  //   "step": 4,
-  //   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkX3V1aWR2NCI6ImIyNTEwZDlmLWU0MTEtNDdlMC04MjY0LWZkYWMwNTVmNTI2YyIsInN0ZXAiOjQsImxlZnRDYXJkIjo4LCJvcHRpb24iOjQsImlhdCI6MTY4MjI4MDkxNiwiZXhwIjoxNjgyMjg0NTE2fQ.YOee-NCvZ_nc1z1BTQB_47G7mKvJNwyPdkW138dHFTo",
-  //   "rightCount": 3
-  // }
-
-  subscription.on('message', eventhandler)
-
   setTimeout(()=>{
-    sendToServer("high")
+    // sendToServer("high")
   }, 5000)
-
 
 });
 

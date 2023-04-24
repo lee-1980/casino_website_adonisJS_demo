@@ -31,6 +31,9 @@ const generateRandomNumber = (currentNumber, expectation, options) => {
 
   let threshold = Math.floor(Math.pow(ratioConfig[options], 1/options) * 10000);
   let randomNumber = generateRandomNumberBetweenNAndM(1, 10000);
+  console.log(threshold)
+  console.log(randomNumber)
+  console.log(currentNumber)
   // The player expects a smaller number than currentNumber
   if (expectation < 0) {
     // edge case
@@ -99,7 +102,7 @@ const gameConfig = {
 
       const decoded = jwt.verify(token, jwt_key)
 
-      if( decoded.step !== 'init'){
+      if(!decoded.step){
         throw new Error('Unauthorized');
       }
 
