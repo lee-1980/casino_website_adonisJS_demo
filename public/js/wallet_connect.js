@@ -5,7 +5,7 @@ $(document).ready(function () {
   /**
    * Construct & handle async (mobile)
    **/
-  var auth = new XummPkce('47fc6b97-e9e1-4dc5-8ff6-f40202d5276c')
+  var auth = new XummPkce('83ba5546-5737-46be-8733-8ec0fcb20d35')
   var sdk = null
 
   function signedInHandler (authorized) {

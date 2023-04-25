@@ -1,4 +1,4 @@
-globalThis.auth = new XummPkce('47fc6b97-e9e1-4dc5-8ff6-f40202d5276c');
+globalThis.auth = new XummPkce('83ba5546-5737-46be-8733-8ec0fcb20d35');
 globalThis.sdk = null;
 
 const ws = adonis.Ws().connect();
@@ -51,7 +51,7 @@ async function eventhandler(message){
       case 'ootopia0001:quiz':
         console.log('ootopia0001:quiz', message);
         token = message.token;
-				
+
         // message value example:
         // {
         //   "event": "ootopia0001:quiz",
@@ -65,7 +65,7 @@ async function eventhandler(message){
         let leftCard = message.leftCard;
         let rightCard = message.rightCard;
         let rightCount  = message.rightCount;
-		
+
 		// write your function to use this leftcard
 		if(step == 1) // or (message.rightCard == undefined || message.rightCard == null || message.rightCard == "")
 			globalThis.fire("Backend:StartGame",leftCard);
@@ -102,7 +102,7 @@ async function eventhandler(message){
         break;
     }
 }
-  
+
 function signedInHandler (authorized) {
     // Assign to global,
     // please don't do this but for the sake of the demo it's easy
@@ -150,9 +150,9 @@ async function placeBetInit(amount, option){
     if(payload_uuidv4){
       try{
         if(isConnected){
-		
+
 		localStorage.setItem("payload_uuidv4", payload_uuidv4);
-			
+
         subscription.emit('message',
             {
               event: 'ootopia0001:start',
@@ -174,10 +174,10 @@ async function placeBetInit(amount, option){
       }
     }
 }
- 
+
 async function sendToServer(answer){
     // Answer is one of "high", "low" or "equal"
-    if (!isConnected) 
+    if (!isConnected)
 		globalThis.fire("Backend:Message",'Error: there isn\'t a connection with the server.');
     // placeBetInit(2,4)
     subscription.emit('message',
@@ -222,8 +222,8 @@ function go_payload(amount) {
           ? 'Now check Xumm, there should be a push notification + sign request in your event list waiting for you ;)'
           : 'Now check Xumm, there should be a sign request in your event list waiting for you ;) (This would have been pushed, but it seems you did not grant Xumm the push permission)';
 		  globalThis.fire("Backend:Info",msg);
-		  
-		 
+
+
 
         return resolved.then(function (payloadOutcome) {
           if(payloadOutcome.signed){
