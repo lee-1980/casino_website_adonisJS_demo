@@ -17,8 +17,8 @@
 
 const Route = use('Route')
 
-Route.on('/').render('home')
-Route.on('terms').render('terms')
-Route.get('games/:id', 'GameManagerController.gameRender')
+Route.get('/' , 'PageRouterController.pageRender')
+Route.get('terms', 'PageRouterController.pageRender')
+Route.get('games/ootopia0001', 'GameManagerController.gameRender')
 
 Route.get("*", ({ view }) => view.render("404"));

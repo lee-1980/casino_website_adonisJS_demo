@@ -1,8 +1,6 @@
 'use strict'
 
-
-
-
+const Env = use('Env')
 
 const gameConfig = {
   ootopia0001 : async (message, socket) => {

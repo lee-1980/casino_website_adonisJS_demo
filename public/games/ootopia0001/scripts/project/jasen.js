@@ -1,4 +1,4 @@
-globalThis.auth = new XummPkce('83ba5546-5737-46be-8733-8ec0fcb20d35');
+globalThis.auth = new XummPkce(xummkey);
 globalThis.sdk = null;
 
 const ws = adonis.Ws().connect();
@@ -187,9 +187,7 @@ async function sendToServer(answer) {
 }
 
 function go() {
-  return globalThis.auth.authorize().then(signedInHandler).catch(e => {
-    globalThis.fire("Backend:Message", 'Error: ' + e.message);
-  })
+  return globalThis.auth.authorize().then(signedInHandler)
 }
 
 function go_payload(amount) {
