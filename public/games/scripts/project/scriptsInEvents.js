@@ -88,6 +88,16 @@ const scriptsInEvents = {
 	async EventSheet1_Event29_Act1(runtime, localVars)
 	{
 		Main.OnAnyTouch();
+	},
+
+	async EventSheet1_Event30_Act1(runtime, localVars)
+	{
+		Main.OnLayoutStart();
+	},
+
+	async EventSheet2_Event1_Act1(runtime, localVars)
+	{
+		Main.OnLayoutStart();
 	}
 
 };

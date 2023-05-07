@@ -4414,7 +4414,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.ScriptsInEvents.EventSheet1_Event24_Act1,
 		C3.ScriptsInEvents.EventSheet1_Event26_Act1,
 		C3.Plugins.Touch.Cnds.IsInTouch,
-		C3.ScriptsInEvents.EventSheet1_Event29_Act1
+		C3.ScriptsInEvents.EventSheet1_Event29_Act1,
+		C3.ScriptsInEvents.EventSheet1_Event30_Act1,
+		C3.ScriptsInEvents.EventSheet2_Event1_Act1
 	];
 };
 self.C3_JsPropNameTable = [

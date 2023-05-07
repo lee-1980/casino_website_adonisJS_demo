@@ -61,6 +61,8 @@ let multipiersValues = new Map();
 
 let isFirstTouchPresed = false;
 
+let canStartBtnClick = false;
+
 runOnStartup(async runtime =>
 {
 	events.attach(globalThis);
@@ -151,8 +153,10 @@ runOnStartup(async runtime =>
 		
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	runtime.addEventListener("afterprojectstart", () => OnAfterProjectStart(runtime));
+	//runtime.Dispatcher().addEventListener("afterfirstlayoutstart", () => OnAfterfirstlayoutstart(runtime));
+  	//self.GetRuntime().Dispatcher().addEventListener("afterfirstlayoutstart", () => OnAfterfirstlayoutstart(runtime));
 	
-	console.log(runtime);
+	//console.log(self);
 	
 	_runtime = runtime;
 		
@@ -169,7 +173,13 @@ function SetGameContainerDiv(){
 	wrapper.appendChild(canvas[0]);
 }
 
+export function OnLayoutStart(){
+	//console.log("OnAfterfirstlayoutstart");
+}
+
 async function OnAfterProjectStart(runtime){
+//console.log("OnAfterProjectStart");
+
 	globalThis.on('GameOver', OnGameOver);
  
 	init(runtime);
@@ -179,19 +189,18 @@ async function OnAfterProjectStart(runtime){
 	AudioPlayer.setSfxMute(false);
 	
   var context = new AudioContext();
-  console.log("AudioContext.state: ",context.state);
+  //console.log("AudioContext.state: ",context.state);
 }
 async function OnBeforeProjectStart(runtime)
 {	
 	//runtime.addEventListener("tick", () => Tick(runtime));
 	//runtime.addEventListener("resize", (e) => Resize(e));
-
 }
 
 
 function Resize(e)
 {
-	console.log(e.cssHeight,e.cssWidth,e.deviceHeight,e.deviceWidth);
+	//console.log(e.cssHeight,e.cssWidth,e.deviceHeight,e.deviceWidth);
 }
 function Tick(runtime)
 {
@@ -238,7 +247,7 @@ async function init(runtime){
 	
 	messageBox.init(runtime);
 	loadingBox.init(runtime);
-	cards.init(runtime);
+	
 
 	startmenu_indicator = _runtime.objects.startmenu_indicator.getFirstInstance();
 	startmenu_multiplier = _runtime.objects.startmenu_multiplier.getFirstInstance();
@@ -249,22 +258,11 @@ async function init(runtime){
 	rightWrongText = _runtime.objects.gp_writeWrongText.getFirstInstance();
 	let obj = {};
 	
-
 	startMenu.init(runtime);
 	hilowbtns.init(runtime);
-	
 		
 	gamePlayMenuItems  = helper.getObjectsStartsWithName("gp_mn_");
-	cards.create();
-	cards.setonCardMoveFinishCallBack(
-		(card)=>{
-			hilowbtns.setBtnsVisible(true);
-
-			hilowbtns.setState(BtnsNo.Equal,BtnsStates.Off);
-			hilowbtns.setState(BtnsNo.Hi,BtnsStates.Off);
-			hilowbtns.setState(BtnsNo.Lo,BtnsStates.Off);
-		}
-	);
+		
 	//addCardsAriveListeners();
 	hilowbtns.setBtnsVisible(false);
 	
@@ -282,8 +280,26 @@ async function init(runtime){
 	eventGroupManager.setActiveEventGroup("StartMenu");
 	
 	OnCardCountSelected(3);
+	
+	setTimeout(initCards,1000);
 }
+function initCards(){
+	cards.init(_runtime);
+	cards.create();
+	cards.setonCardMoveFinishCallBack(
+		(card)=>{
+			hilowbtns.setBtnsVisible(true);
 
+			hilowbtns.setState(BtnsNo.Equal,BtnsStates.Off);
+			hilowbtns.setState(BtnsNo.Hi,BtnsStates.Off);
+			hilowbtns.setState(BtnsNo.Lo,BtnsStates.Off);
+		}
+	);
+	
+	cards.resetPos();
+	
+	canStartBtnClick = true;
+}
 
 function gamePlayMenuAddChilds(){
 	gamePlayMenuItems.forEach((item)=>{
@@ -411,7 +427,7 @@ function startGame(){
 // ----------------[[ ]]
 
 export function OnStartBtnClick(){
-	if(gameState != GameStates.StartMenu)
+	if(gameState != GameStates.StartMenu || !canStartBtnClick )
 		return;
 	AudioPlayer.PlaySFX("click");
 	xrpInitAmount = _runtime.objects.startmenu_InitBetInput.getFirstInstance().text;
@@ -464,7 +480,7 @@ export function OnCardCountSelected(count){
 		
 	_cardReminedSelectCountHolder = count;
 	setCardCount(count);
-	console.log("cardcount: ",count);
+	//console.log("cardcount: ",count);
 }
 export function OnTryAgainBtnClick(){
 	AudioPlayer.PlaySFX("click");
@@ -511,7 +527,6 @@ export function showStartMenu(){
 	setGameState(GameStates.StartMenu);
 	
 	startMenu.reset();
-	cards.resetPos();
 	
 	setGamePlayItemsVisible(false);
 	
@@ -527,6 +542,8 @@ export function showStartMenu(){
 	
 	// ["StartMenu","WinPopup","LosePopup","GamePlay","MessageBox","Loading"];
 	eventGroupManager.setActiveEventGroup("StartMenu");
+	
+	cards.resetPos();
 }
 export function OnInitBetInputChange()
 {

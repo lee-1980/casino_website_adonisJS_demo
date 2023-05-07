@@ -6,17 +6,18 @@ const gameConfig = {
   ootopia0001 : "flipflopfrenzy",
 }
 
+
 class GameManagerController {
 
   async gameRender({ params, view, response }) {
 
     if(gameConfig[params.id]){
       return view.render(`game/${gameConfig[params.id]}`)
+
     }
     else{
       return view.render('404')
     }
-
   }
 
   async placebet({ request, response }) {
